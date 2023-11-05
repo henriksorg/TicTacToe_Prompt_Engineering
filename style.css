@@ -1,0 +1,53 @@
+#tic-tac-toe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #tic-tac-toe-board {
+    width: 100%;
+    height: 70vh;
+    max-width: 700px;
+    margin: auto;
+    border-collapse: collapse;
+  }
+  
+  .tic-tac-toe-cell {
+    border: 1px solid #333;
+    width: 33.33%;
+    height: 23.33vh;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  
+  /* Entfernt den oberen Rand für die erste Zeile */
+  #tic-tac-toe-board tr:first-child .tic-tac-toe-cell {
+    border-top: none;
+  }
+  
+  /* Entfernt den linken Rand für die erste Spalte */
+  #tic-tac-toe-board td:first-child {
+    border-left: none;
+  }
+  
+  /* Letzte Zelle in jeder Reihe soll keinen rechten Rand haben */
+  .tic-tac-toe-cell:nth-child(3n) {
+    border-right: none;
+  }
+  
+  /* Letzte Zelle in jeder Spalte soll keinen unteren Rand haben */
+  .tic-tac-toe-cell:nth-last-child(-n+3) {
+    border-bottom: none;
+  }
+  
+  @media (max-width: 700px) {
+    #tic-tac-toe-board {
+      max-width: none;
+    }
+    .tic-tac-toe-cell {
+      width: 33.33%;
+      height: 23.33vw;
+    }
+  }
